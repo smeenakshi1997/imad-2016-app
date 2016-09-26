@@ -5,6 +5,44 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var article_one={
+    title:'Article One | Meeenakshi',
+    heading:'Sep 24, 2016'
+    content:`<p>
+            This is the content in my first page...
+        </p>
+        <p>
+           This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page... 
+        </p>
+        <p>
+            This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...
+        </p>`
+};
+var htmlTemplate=`<html>
+  <head>
+  <title>
+   ARTICLE ONE|MEENAKSHI
+   <meta name="viewport" content="width=device-width,initial scale=1"/>
+   </title>
+   </head>
+<body>
+    <div class="container">
+    <div>
+        <a href="/">Home</a>
+    </div>
+    <hr/>
+    <h3>
+        ${heading}
+    </h3>
+    <div>${date}</div>
+    <div>
+    ${content}
+    </div>
+    </div>
+</body>  
+</html>`
+;
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
