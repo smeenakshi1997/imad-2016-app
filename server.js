@@ -24,7 +24,7 @@ var articles= {
 'article_two':{
     title:'Article two | Meeenakshi',
     heading:'Article Two',
-    date:'Sep 24, 2016',
+    date:'Sep 26, 2016',
     content:`
         <p>
             This is the content in my second page...
@@ -38,7 +38,7 @@ var articles= {
 'article_three':{
     title:'Article three | Meeenakshi',
     heading:'Article Three',
-    date:'Sep 24, 2016',
+    date:'Sep 30, 2016',
     content:`
         <p>
             This is the content in my third page...
@@ -48,7 +48,7 @@ var articles= {
         <p>
              This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..
         </p>`
-},
+}
 };
 
 function createTemplate(data){
