@@ -10,4 +10,4 @@ var marginLeft=0;
     marginLeft=marginLeft+5; 
     var interval=setInterval(moveRight,50);
     img.style.marginLeft=marginLeft+'px';
-}
+};
