@@ -5,10 +5,11 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articles={
-var article_one={
+var articles= {
+    'article_one':{
     title:'Article One | Meeenakshi',
-    heading:'Sep 24, 2016',
+    heading:'Article One',
+    date:'Sep 24, 2016',
     content:`
         <p>
             This is the content in my first page...
@@ -19,7 +20,37 @@ var article_one={
         <p>
             This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...This is the content in my first page...
         </p>`
+},
+'article_two':{
+    title:'Article two | Meeenakshi',
+    heading:'Article Two',
+    date:'Sep 24, 2016',
+    content:`
+        <p>
+            This is the content in my second page...
+        </p>
+        <p> This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page...
+        </p>
+        <p>
+             This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page... This is the content in my second page...
+        </p>`
+},
+'article_three':{
+    title:'Article three | Meeenakshi',
+    heading:'Article Three',
+    date:'Sep 24, 2016',
+    content:`
+        <p>
+            This is the content in my third page...
+        </p>
+        <p> This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..
+        </p>
+        <p>
+             This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..This is the content in my third page..
+        </p>`
+},
 };
+
 function createTemplate(data){
 var title=data.title;
 var date=data.date;
@@ -64,8 +95,10 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article_one', function (req, res) {
-  res.send(createTemplate(article_one));
+app.get('/:articleName', function (req, res) {
+
+    var articleName=req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
