@@ -1,4 +1,4 @@
-var button=document.getElementbyId('counter');
+var button=document.getElementById('counter');
 
 button.onclick=function(){
     
@@ -11,9 +11,7 @@ button.onclick=function(){
             if(request.status===200)
             {
                 var counter=request.responseText;
-            
-    
-        var span=getElementbyId('çount');
+               var span=document.getElementById('çount');
         span.innerHTML=counter.toString();
         }
         }
